@@ -4,7 +4,7 @@
 A lightweight, customizable web-based music player designed with a mixture of neo-brutalist + retro "operating system" aesthetics.
 It features a dual-window interface: a playback controller (`Player.exe`) and an interactive playlist (`Playlist.md`).
 
-As a preview, you can test the designs [here](https://www.google.es) <- Toggle different themes in the dropdown menu below the player.
+As a preview, you can test the designs [here](https://papirotheque.github.io/Papiros-music-player/) <- Toggle different themes in the dropdown menu below the player.
 
 **Notes:** I have linked some songs I enjoy. Feel free to add your own songs. You can host them locally.
 
