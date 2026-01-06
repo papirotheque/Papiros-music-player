@@ -1,0 +1,299 @@
+/******************************************************
+ * 1. IMPORTS                                         *
+ * import fonts and other styles here                 *
+ ******************************************************/
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+Symbols:wght@100..900&family=VT323&display=swap');
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/******************************************************
+ * 2. ROOT VALUES                                     *
+ * full theme lists with toggle                       *
+ ******************************************************/
+
+/* Papiro OS */
+:root,
+[data-theme="papiro"] {
+
+    /* Select your imported/desired font here */
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --bg-color: #ffffff;
+    --text-color: #191919;
+    --accent-primary: #2600ff;
+    --window-bg: #ffffff;
+    --title-bar-bg: linear-gradient(90deg, #2600ff, #6e33ff);
+    --selection-bg: #2600ff;
+    --selection-text: #ffffff;
+    --bevel-light: #ffffff;
+    --bevel-dark: #868a8e;
+    --bevel-shadow: #000000;
+    --border-depth: #dddddd;
+}
+
+/* Dracula */
+[data-theme="dracula"] {
+    --bg-color: #282a36;
+    --text-color: #f1fa8c;
+    --accent-primary: #bd93f9;
+    --window-bg: #282a36;
+    --title-bar-bg: linear-gradient(90deg, #6272a4, #bd93f9);
+    --selection-bg: #44475a;
+    --selection-text: #f1fa8c;
+    --bevel-light: #6272a4;
+    --bevel-dark: #191a21;
+    --bevel-shadow: #000000;
+    --border-depth: #44475a;
+}
+
+/* Nord */
+[data-theme="nord"] {
+    --bg-color: #2e3440;
+    --text-color: #eceff4;
+    --accent-primary: #88c0d0;
+    --window-bg: #3b4252;
+    --title-bar-bg: linear-gradient(90deg, #5e81ac, #81a1c1);
+    --selection-bg: #88c0d0;
+    --selection-text: #2e3440;
+    --bevel-light: #4c566a;
+    --bevel-dark: #2e3440;
+    --bevel-shadow: #000000;
+    --border-depth: #3b4252;
+}
+
+/* Gruvbox Dark */
+[data-theme="gruvbox-dark"] {
+    --bg-color: #1d2021;
+    --text-color: #ebdbb2;
+    --accent-primary: #fabd2f;
+    --window-bg: #282828;
+    --title-bar-bg: linear-gradient(90deg, #458588, #83a598);
+    --selection-bg: #d65d0e;
+    --selection-text: #fbf1c7;
+    --bevel-light: #504945;
+    --bevel-dark: #1d2021;
+    --bevel-shadow: #000000;
+    --border-depth: #3c3836;
+}
+
+/* Gruvbox Light */
+[data-theme="gruvbox-light"] {
+    --bg-color: #fbf1c7;
+    --text-color: #3c3836;
+    --accent-primary: #af3a03;
+    --window-bg: #f2e5bc;
+    --title-bar-bg: linear-gradient(90deg, #458588, #076678);
+    --selection-bg: #d65d0e;
+    --selection-text: #fbf1c7;
+    --bevel-light: #f9f5d7;
+    --bevel-dark: #bdae93;
+    --bevel-shadow: #3c3836;
+    --border-depth: #d5c4a1;
+}
+
+/* Hotline Miami */
+[data-theme="hotline-miami"] {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --accent-primary: #00ffff;
+    --window-bg: #111111;
+    --title-bar-bg: linear-gradient(90deg, #ff00ff, #00ffff);
+    --selection-bg: #ffff00;
+    --selection-text: #000000;
+    --bevel-light: #333333;
+    --bevel-dark: #000000;
+    --bevel-shadow: #ff00ff;
+    --border-depth: #ff00ff;
+}
+
+/* Solarized Dark */
+[data-theme="solarized-dark"] {
+    --bg-color: #002b36;
+    --text-color: #839496;
+    --accent-primary: #b58900;
+    --window-bg: #073642;
+    --title-bar-bg: linear-gradient(90deg, #268bd2, #2aa198);
+    --selection-bg: #268bd2;
+    --selection-text: #eee8d5;
+    --bevel-light: #586e75;
+    --bevel-dark: #00212b;
+    --bevel-shadow: #000000;
+    --border-depth: #073642;
+}
+
+/* Catppuccin Mocha */
+[data-theme="mocha"] {
+    --bg-color: #1e1e2e;
+    --text-color: #cdd6f4;
+    --accent-primary: #cba6f7;
+    --window-bg: #181825;
+    --title-bar-bg: linear-gradient(90deg, #cba6f7, #f5c2e7);
+    --selection-bg: #f5e0dc;
+    --selection-text: #1e1e2e;
+    --bevel-light: #45475a;
+    --bevel-dark: #11111b;
+    --bevel-shadow: #000000;
+    --border-depth: #313244;
+}
+
+/* Body */
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/******************************************************
+ * 3. PLAYER SETTINGS                                 *
+ * here are the styles for the different player parts *
+ ******************************************************/
+
+/* Player container   */
+.rp-desk {
+    background: var(--bg-color);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 1rem;
+    margin: 2rem 0;
+    font-family: var(--font-mono);
+}
+
+/* Window styles */
+.rp-window {
+    background: var(--window-bg);
+    border: 1px solid var(--text-color);
+    box-shadow:
+        1px 1px 0px var(--bevel-light) inset,
+        -1px -1px 0px var(--bevel-dark) inset,
+        -2px -2px 0px var(--bevel-shadow) inset,
+        2px 2px 0px var(--bevel-light) inset,
+        4px 4px 0px var(--border-depth);
+    display: flex;
+    flex-direction: column;
+}
+
+.rp-title-bar-alt {
+    background: var(--title-bar-bg);
+    color: #ffffff;
+    padding: 0 0.75rem;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--text-color);
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.rp-win-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Player window */
+.rp-player-win {
+    flex: 1;
+    min-width: 280px;
+    max-height: 500px;
+}
+
+/* Playlist window */
+.rp-list-win {
+    flex: 1;
+    min-width: 280px;
+    height: 300px;
+    max-height: 500px;
+}
+
+/* Display, progress bar, buttons and controls */
+.rp-track-display {
+    border: 2px solid var(--text-color);
+    padding: 1rem;
+    text-align: center;
+    background: var(--window-bg);
+    box-shadow: inset 2px 2px 0px var(--bevel-dark);
+    color: var(--text-color);
+}
+
+/* Progress bar */
+.rp-progress-box {
+    height: 15px;
+    border: 2px solid var(--accent-primary);
+    cursor: pointer;
+    position: relative;
+    background: var(--bg-color);
+    overflow: hidden;
+}
+
+.rp-progress-fill {
+    height: 100%;
+    background: var(--accent-primary);
+    width: 0%;
+    transition: width 0.1s;
+    pointer-events: none;
+}
+
+/* Player buttons and controls */
+.rp-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.rp-btn {
+    flex: 1;
+    background: var(--accent-primary);
+    color: #ffffff;
+    border: 2px solid var(--text-color);
+    padding: 0.5rem;
+    font-family: var(--font-mono);
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow:
+        inset 1px 1px 0px var(--bevel-light),
+        inset -1px -1px 0px var(--bevel-dark),
+        2px 2px 0px var(--text-color);
+    transition: transform 0.1s;
+}
+
+.rp-btn:active {
+    transform: translate(1px, 1px);
+    box-shadow:
+        inset -1px -1px 0px var(--bevel-light),
+        inset 1px 1px 0px var(--bevel-dark),
+        1px 1px 0px var(--text-color);
+}
+
+/* Playlist settings */
+.rp-playlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    height: 100%;
+    background: var(--bg-color);
+    margin-right: 2px;
+    border-right: 1px solid var(--bevel-dark);
+}
+
+.rp-track-item {
+    padding: 4px;
+    border-bottom: 1px solid var(--border-depth);
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+.rp-track-item.active {
+    background: var(--selection-bg);
+    color: var(--selection-text);
+}

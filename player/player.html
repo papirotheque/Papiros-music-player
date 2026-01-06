@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/styles/styles-papiro-os.css">
+</head>
+
+<body>
+    <div class="rp-desk">
+        <audio id="rp-audio"></audio>
+
+        <div class="rp-window rp-player-win">
+            <div class="rp-title-bar-alt"><span>Player.exe</span></div>
+            <div class="rp-win-content">
+                <div class="rp-track-display">
+                    <div id="rp-title" class="rp-song-title">Cargando...</div>
+                    <div id="rp-artist" style="font-size: 0.8em; opacity: 0.8;">...</div>
+                </div>
+                <div class="rp-progress-box" id="rp-progress">
+                    <div class="rp-progress-fill" id="rp-bar"></div>
+                </div>
+                <div class="rp-controls">
+                    <button class="rp-btn" onclick="playPrev()">|&lt;</button>
+                    <button class="rp-btn" onclick="togglePlay()" id="rp-play-btn">▶︎</button>
+                    <button class="rp-btn" onclick="playNext()">&gt;|</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="rp-window rp-list-win">
+            <div class="rp-title-bar-alt"><span>Playlist.md</span></div>
+            <div class="rp-win-content" style="padding: 0;">
+                <ul class="rp-playlist" id="rp-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/player.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+/******************************************************
+ * 1. IMPORTS                                         *
+ * import fonts and other styles here                 *
+ ******************************************************/
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+Symbols:wght@100..900&family=VT323&display=swap');
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/******************************************************
+ * 2. ROOT VALUES                                     *
+ * write here your desired colors and themes          *
+ ******************************************************/
+
+:root {
+    /* Select your imported/desired font here */
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Base Colors */
+    --bg-color: #282a36;
+    --text-color: #f1fa8c;
+    --accent-primary: #bd93f9;
+    --window-bg: #282a36;
+    --title-bar-bg: linear-gradient(90deg, #6272a4, #bd93f9);
+
+    /* UI States */
+    --selection-bg: #44475a;
+    --selection-text: #f1fa8c;
+
+    /* Bevel effects */
+    --bevel-light: #6272a4;
+    --bevel-dark: #191a21;
+    --bevel-shadow: #000000;
+    --border-depth: #44475a;
+}
+
+
+/******************************************************
+ * 3. PLAYER SETTINGS                                 *
+ * here are the styles for the different player parts *
+ ******************************************************/
+
+/* Player container   */
+.rp-desk {
+    background: var(--bg-color);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 1rem;
+    margin: 2rem 0;
+    font-family: var(--font-mono);
+}
+
+/* Window styles */
+.rp-window {
+    background: var(--window-bg);
+    border: 1px solid var(--text-color);
+    box-shadow:
+        1px 1px 0px var(--bevel-light) inset,
+        -1px -1px 0px var(--bevel-dark) inset,
+        -2px -2px 0px var(--bevel-shadow) inset,
+        2px 2px 0px var(--bevel-light) inset,
+        4px 4px 0px var(--border-depth);
+    display: flex;
+    flex-direction: column;
+}
+
+.rp-title-bar-alt {
+    background: var(--title-bar-bg);
+    color: #ffffff;
+    padding: 0 0.75rem;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--text-color);
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.rp-win-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Player window */
+.rp-player-win {
+    flex: 1;
+    min-width: 280px;
+    max-height: 500px;
+}
+
+/* Playlist window */
+.rp-list-win {
+    flex: 1;
+    min-width: 280px;
+    height: 300px;
+    max-height: 500px;
+}
+
+/* Display, progress bar, buttons and controls */
+.rp-track-display {
+    border: 2px solid var(--text-color);
+    padding: 1rem;
+    text-align: center;
+    background: var(--window-bg);
+    box-shadow: inset 2px 2px 0px var(--bevel-dark);
+    color: var(--text-color);
+}
+
+/* Progress bar */
+.rp-progress-box {
+    height: 15px;
+    border: 2px solid var(--accent-primary);
+    cursor: pointer;
+    position: relative;
+    background: var(--bg-color);
+    overflow: hidden;
+}
+
+.rp-progress-fill {
+    height: 100%;
+    background: var(--accent-primary);
+    width: 0%;
+    transition: width 0.1s;
+    pointer-events: none;
+}
+
+/* Player buttons and controls */
+.rp-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.rp-btn {
+    flex: 1;
+    background: var(--accent-primary);
+    color: #ffffff;
+    border: 2px solid var(--text-color);
+    padding: 0.5rem;
+    font-family: var(--font-mono);
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow:
+        inset 1px 1px 0px var(--bevel-light),
+        inset -1px -1px 0px var(--bevel-dark),
+        2px 2px 0px var(--text-color);
+    transition: transform 0.1s;
+}
+
+.rp-btn:active {
+    transform: translate(1px, 1px);
+    box-shadow:
+        inset -1px -1px 0px var(--bevel-light),
+        inset 1px 1px 0px var(--bevel-dark),
+        1px 1px 0px var(--text-color);
+}
+
+/* Playlist settings */
+.rp-playlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    height: 100%;
+    background: var(--bg-color);
+    margin-right: 2px;
+    border-right: 1px solid var(--bevel-dark);
+}
+
+.rp-track-item {
+    padding: 4px;
+    border-bottom: 1px solid var(--border-depth);
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+.rp-track-item.active {
+    background: var(--selection-bg);
+    color: var(--selection-text);
+}
