@@ -1,4 +1,5 @@
 # Papiro's Music Player
+![papirosmusicplayer](https://github.com/user-attachments/assets/0bfdab6c-11a5-4777-8f6b-d3cc07b0fbf4)
 
 A lightweight, customizable web-based music player designed with a mixture of neo-brutalist + retro "operating system" aesthetics.
 It features a dual-window interface: a playback controller (`Player.exe`) and an interactive playlist (`Playlist.md`).
